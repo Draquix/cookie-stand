@@ -1,3 +1,54 @@
+body {
+    background-color:rgb(86, 93, 136);
+    font-family:serif;
+    color:rgb(21, 170, 120)
+}
 ul {
+    text-indent: 5px 5px;
     font-family: sans-serif;
+    font-weight:bold;
+    color:rgb(27, 91, 150);
+}
+header {
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    background-color:mediumblue;
+    padding:25px;
+}
+header a {
+    position: absolute;
+    text-align:right;
+}
+nav {
+    background-color:midnightblue;
+    align-content:right;
+    margin-right:0;
+}
+nav a {
+    border-radius:15px;
+    background-color:rgb(226, 28, 183);
+    padding:15px;
+}
+section {
+    background-color:mediumslateblue
+}
+h1 {
+    text-shadow:rgb(117, 27, 5) 2px 2px;
+    object-position: center;
+    align-self:center;
+}
+img {
+    width:100%;
+    position: relative;
+}
+a {
+    font-family: 'East Sea Dokdo', cursive;
+}
+ul li {
+    font-family:Arial,Verdana,Helvetica;
+}
+#sales {
+    margin-top:40px;
+    font-size:50px;
 }

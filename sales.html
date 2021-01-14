@@ -9,36 +9,38 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <section>
-            <p>Seattle</p>
-            <ul id="seatle-list">
+        <header>
+            <h1>Sales Page</h1>
+            <p>City With Total Cookies Per Hour</p>
+            <a href="index.html">Main Page</a>
+        </header>
+        <main id="store-names">
+            <table id="table">
+                <thead id="head">
+                <tr id="head-row"></tr>
+                    <td id = "blank"> </td>
+                </tr>
+                <tbody id="table-bdoy"></tbody>
+            </thead>
+            </table>
+            <form>
+                <fieldset>
+                  <legend>Choose a location for the table</legend>
+                  <label for="shopLocation">City of Shop</label>
+                  <input id="shopLocation" required/>
+                  <label for="minimumCookiesSales">Minimum Cookies Sold in Location</label>
+                  <input id="minimumCookieSales" required/>
+                  <label for="maximumCookieSales">Maximum Cookies Sold in Location</label>
+                  <input id="maximumCookieSales" type="number" required/>
+                  <label for="averageCookieSales">Average Cookies Sales</label>
+                  <input id="interestWords" required/>
+                  <button>Add the Location!</button>
+                </fieldset>
+              </form>
+              <ul id="seatle-list">
 
-            </ul>
-        </section>
-        <section>
-            <p>Tokyo</p>
-            <ul id="tokyo-list">
-
-            </ul>
-        </section>
-        <section>
-            <p>Dubai</p>
-            <ul id="dubai-list">
-
-            </ul>
-        </section>
-        <section>
-            <p>Paris</p>
-            <ul id="paris-list">
-
-            </ul>
-        </section>
-        <section>
-            <p>Lima</p>
-            <ul id="lima-list">
-
-            </ul>
-        </section>
+              </ul>
+        </main>
 
 
 
