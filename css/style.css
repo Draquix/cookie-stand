@@ -10,6 +10,7 @@ ul {
     color:rgb(27, 91, 150);
 }
 header {
+    display:inline-block;
     margin-left: auto;
     margin-right: auto;
     text-align:center;
@@ -17,18 +18,30 @@ header {
     padding:25px;
 }
 header a {
-    position: absolute;
     text-align:right;
 }
 nav {
-    background-color:midnightblue;
-    align-content:right;
+    text-align:right;
     margin-right:0;
 }
 nav a {
+    margin-top:40px;
+    font-size:50px;
     border-radius:15px;
     background-color:rgb(226, 28, 183);
-    padding:15px;
+    
+}
+main {
+    display: inline-block;
+    margin: 20px;
+}
+#hours{
+    float: left;
+    width: 35%;
+}
+#about {
+    width:60%;
+    float:right;
 }
 section {
     background-color:mediumslateblue
@@ -39,7 +52,8 @@ h1 {
     align-self:center;
 }
 img {
-    width:100%;
+    width:30%;
+    heigth:100px;
     position: relative;
 }
 a {
@@ -47,8 +61,4 @@ a {
 }
 ul li {
     font-family:Arial,Verdana,Helvetica;
-}
-#sales {
-    margin-top:40px;
-    font-size:50px;
 }
