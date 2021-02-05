@@ -18,7 +18,7 @@ function Location(Name,min,max,avg) {
         }
     }
     Location.prototype.setCookiePerHour = function() {
-        this.generateCustomerPerhour();
+        this.generateCustomerPerHour();
         for (var i=0; i < theTimesArray.length; i++) {
             this.generateCustomerPerHour = function (){
                 var thisTotal = Math.ceil(this.customerPerHour[i]*this.cookiePerHour);
@@ -28,26 +28,46 @@ function Location(Name,min,max,avg) {
         }
     }
     Location.prototype.render = function() {
+        this.setCookiePerHour();
+
         var tableBody = document.getElementById('table-body');
-        var list = document.createElement('tr');
-        var shops = document.createElement('td');
-        var cookieSales = [];
-        shops.textContent = this.cityName;
-        tableBody.appendChild(list);
-        list.appendChild(shops);
-        for (var i = 0; i < theTimesArray.length; i++) {
-            var data = document.createElement('td')
-            data.textContent = this.cookiePerHour[i];
-            cookieSales[i] = this.cookiePerHour[i];
-            list.appendChild(data);
-        }
-        cookieSales.push(this.totalCookies);
-        cookieTotal.push(cookieSales);
-        var storeData = document.createElement('td');
-        storeData.textContent = this.totalCookies;
-        table.appendChild(tableBody);
-        tableBody.appendChild(list);
-        list.appendChild(storeData);
+        var newRow = document.createElement('tr');
+        var cityName = document.createElement('td');
+        cityName.textContent = this.Name;
+        //console.log(this.cityName.textContent);
+        newRow.appendChild(cityName);
+        tableBody.appendChild(newRow);
+        
+        
+        //newRow.appendChild(document.createTextNode(this.Name));
+        
+        // tableBody.appendChild(newRow);
+        // var list = document.createElement('tr');
+        // var shops = document.createElement('td');
+        // var cookieSales = [];
+        // shops.textContent = this.cityName;
+        // tableBody.appendChild(list);
+        // list.appendChild(shops);
+        // for (var i = 0; i < theTimesArray.length; i++) {
+        //     var data = document.createElement('td')
+        //     data.textContent = this.cookiePerHour[i];
+        //     cookieSales[i] = this.cookiePerHour[i];
+        //     list.appendChild(data);
+        // }
+        // cookieSales.push(this.totalCookies);
+        // cookieTotal.push(cookieSales);
+        // var storeData = document.createElement('td');
+        // storeData.textContent = this.totalCookies;
+        // table.appendChild(tableBody);
+        // tableBody.appendChild(list);
+        // list.appendChild(storeData);
+    // }
+        
+}
+  
+    function random (min,max) {
+        var answer = Math.floor((Math.random())*(max-min))+min;
+        return answer;
     }
     
 
@@ -62,23 +82,26 @@ var Lima = new Location("Lima",2,16,4.6);
 Seattle.generateCustomerPerHour(Seattle.minCustomer, Seattle.maxCustomer);
 Seattle.setCookiePerHour();
 Seattle.render();
-location.push(Seattle);
+// location.push(Seattle);
 var theTable = document.getElementById('table');
 
 function makeHeader() {
-    var thead = document.getElementById('table');
-    var headRow = document.getElementById('head');
-    var hourRow = document.getElementById('blank');
+    var thead = document.getElementById('table'); //the table
+    var headRow = document.getElementById('head'); //the head
+    var hourRow = document.getElementById('blank');//a td to append
+    var city = document.createElement('th');//make th
+    city.textContent = "City   ";
+    headRow.appendChild(city);  //the head . append th
     for (var i = 0; i < theTimesArray.length; i++) {
-        var list = document.createElement('td');
+        var list = document.createElement('th'); //creat all th
         list.textContent = theTimesArray[i];
-        headRow.appendChild(list);
+        headRow.appendChild(list);   //head . append th
     }
     var blank = document.getElementById('blank');
-    blank.appendChild(document.createTextNode("    ");
+    blank.appendChild(document.createTextNode("    "));
     hourRow.textContent = "Total For Location";
     headRow.appendChild(hourRow);
     thead.appendChild(headRow);
-    table.appendChild(thead);
+    //table.appendChild(thead);
 }
 makeHeader();
